@@ -2,7 +2,7 @@ package pkg
 
 import "fmt"
 
-var lengthFactors = map[string]float64{
+var LengthFactors = map[string]float64{
 	"millimeter": 1,
 	"centimeter": 10,
 	"meter":      1000,
@@ -13,7 +13,7 @@ var lengthFactors = map[string]float64{
 	"mile":       1609344,
 }
 
-var weightFactors = map[string]float64{
+var WeightFactors = map[string]float64{
 	"milligram": 1,
 	"gram":      1000,
 	"kilogram":  1000000,
@@ -41,21 +41,21 @@ func ConvertMeasures() {
 
 		switch choice {
 		case 1:
-			result, err := convert(value, fromUnit, toUnit, lengthFactors)
+			result, err := Convert(value, fromUnit, toUnit, LengthFactors)
 			if err != nil {
 				fmt.Println("Error:", err)
 				continue
 			}
 			fmt.Printf("%.2f %s is equal to %.2f %s\n", value, fromUnit, result, toUnit)
 		case 2:
-			result, err := convert(value, fromUnit, toUnit, weightFactors)
+			result, err := Convert(value, fromUnit, toUnit, WeightFactors)
 			if err != nil {
 				fmt.Println("Error:", err)
 				continue
 			}
 			fmt.Printf("%.2f %s is equal to %.2f %s\n", value, fromUnit, result, toUnit)
 		case 3:
-			result, err := convertTemperature(value, fromUnit, toUnit)
+			result, err := ConvertTemperature(value, fromUnit, toUnit)
 			if err != nil {
 				fmt.Println("Error:", err)
 				continue
@@ -70,7 +70,7 @@ func ConvertMeasures() {
 	}
 }
 
-func convert(value float64, fromUnit, toUnit string, factors map[string]float64) (float64, error) {
+func Convert(value float64, fromUnit, toUnit string, factors map[string]float64) (float64, error) {
 	fromFactor, fromExists := factors[fromUnit]
 	toFactor, toExists := factors[toUnit]
 
@@ -81,7 +81,7 @@ func convert(value float64, fromUnit, toUnit string, factors map[string]float64)
 	return (value * fromFactor) / toFactor, nil
 }
 
-func convertTemperature(value float64, fromUnit, toUnit string) (float64, error) {
+func ConvertTemperature(value float64, fromUnit, toUnit string) (float64, error) {
 	switch fromUnit {
 	case "Celsius":
 		switch toUnit {

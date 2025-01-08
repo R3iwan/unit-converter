@@ -1,0 +1,50 @@
+# Binaries for programs and plugins
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Output of the Go compiler
+*.o
+*.a
+
+# Binary output
+unit-converter
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Logs and temporary files
+*.log
+*.tmp
+
+# Go dependency files
+vendor/
+
+# IDE and editor files
+.idea/
+.vscode/
+*.swp
+
+# Node.js dependencies (if frontend uses npm or yarn)
+node_modules/
+package-lock.json
+yarn.lock
+
+# Frontend build files (if built into static files)
+dist/
+build/
+
+# Coverage reports
+*.coverprofile
+coverage.out
+
+# Cache files
+*.cache
+*.bak
+
+# Sensitive or environment-specific files
+.env
+.env.local
+.env.*.local

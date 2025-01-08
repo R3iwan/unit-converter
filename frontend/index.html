@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unit Converter</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Unit Converter</h1>
+    <div class="tabs">
+      <button id="length-tab" class="active" onclick="showTab('length')">Length</button>
+      <button id="weight-tab" onclick="showTab('weight')">Weight</button>
+      <button id="temperature-tab" onclick="showTab('temperature')">Temperature</button>
+    </div>
+
+    <div id="length" class="tab-content">
+      <h3>Enter the length to convert</h3>
+      <input type="number" id="length-value" placeholder="Value">
+      <select id="length-from">
+        <option value="millimeter">Millimeter</option>
+        <option value="centimeter">Centimeter</option>
+        <option value="meter">Meter</option>
+        <option value="kilometer">Kilometer</option>
+        <option value="inch">Inch</option>
+        <option value="foot">Foot</option>
+        <option value="yard">Yard</option>
+        <option value="mile">Mile</option>
+      </select>
+      <select id="length-to">
+        <option value="millimeter">Millimeter</option>
+        <option value="centimeter">Centimeter</option>
+        <option value="meter">Meter</option>
+        <option value="kilometer">Kilometer</option>
+        <option value="inch">Inch</option>
+        <option value="foot">Foot</option>
+        <option value="yard">Yard</option>
+        <option value="mile">Mile</option>
+      </select>
+      
+      <button onclick="convert('length')">Convert</button>
+      <div id="length-result" class="result"></div>
+    </div>
+
+    <div id="weight" class="tab-content" style="display: none;">
+      <h3>Enter the weight to convert</h3>
+      <input type="number" id="weight-value" placeholder="Value">
+      <select id="weight-from">
+        <option value="mg">Milligram</option>
+        <option value="g">Gram</option>
+        <option value="kg">Kilogram</option>
+        <option value="oz">Ounce</option>
+        <option value="lb">Pound</option>
+      </select>
+      <select id="weight-to">
+        <option value="mg">Milligram</option>
+        <option value="g">Gram</option>
+        <option value="kg">Kilogram</option>
+        <option value="oz">Ounce</option>
+        <option value="lb">Pound</option>
+      </select>
+      <button onclick="convert('weight')">Convert</button>
+      <div id="weight-result" class="result"></div>
+    </div>
+
+    <div id="temperature" class="tab-content" style="display: none;">
+      <h3>Enter the temperature to convert</h3>
+      <input type="number" id="temperature-value" placeholder="Value">
+      <select id="temperature-from">
+        <option value="C">Celsius</option>
+        <option value="F">Fahrenheit</option>
+        <option value="K">Kelvin</option>
+      </select>
+      <select id="temperature-to">
+        <option value="C">Celsius</option>
+        <option value="F">Fahrenheit</option>
+        <option value="K">Kelvin</option>
+      </select>
+      <button onclick="convert('temperature')">Convert</button>
+      <div id="temperature-result" class="result"></div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
